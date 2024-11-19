@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flappy Bird using JS | by learnWD</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #70c5ce;
+        }
+        canvas {
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h3>Flappy Bird by LearnWD</h3>
+    <canvas id="canvas" width="288" height="512"></canvas>
+    <div id="gameOver" style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
+        <h2>Game Over</h2>
+        <p id="finalScore"></p>
+        <button onclick="restartGame()">Restart</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
