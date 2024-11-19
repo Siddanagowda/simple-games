@@ -14,13 +14,16 @@ fg.src = "images/fg.png";
 pipeNorth.src = "images/pipeNorth.png";
 pipeSouth.src = "images/pipeSouth.png";
 
+// Game settings
 var gap = 85;
 var constant;
 
 var bX = 10;
 var bY = 150;
 
-var gravity = 1.5;
+// Adjust gravity and pipe speed
+var gravity = 0.75; // Reduced gravity for slower falling
+var pipeSpeed = 1; // Reduced speed for pipes
 
 var score = 0;
 var isGameOver = false;
@@ -43,7 +46,7 @@ document.addEventListener("touchstart", moveUp); // Mobile controls
 
 function moveUp() {
     if (!isGameOver) {
-        bY -= 25;
+        bY -= 25; // Jump height
         fly.play();
     }
 }
@@ -63,7 +66,9 @@ function draw() {
         constant = pipeNorth.height + gap;
         ctx.drawImage(pipeNorth, pipe[i].x, pipe[i].y);
         ctx.drawImage(pipeSouth, pipe[i].x, pipe[i].y + constant);
-        pipe[i].x--;
+        
+        // Move pipes according to the adjusted speed
+        pipe[i].x -= pipeSpeed;
 
         if (pipe[i].x == 125) {
             pipe.push({
@@ -97,6 +102,8 @@ function draw() {
 
     ctx.drawImage(fg, 0, cvs.height - fg.height);
     ctx.drawImage(bird, bX, bY);
+    
+    // Apply gravity to the bird's position
     bY += gravity;
 
     ctx.fillStyle = "#000";
