@@ -15,15 +15,15 @@ pipeNorth.src = "images/pipeNorth.png";
 pipeSouth.src = "images/pipeSouth.png";
 
 // Game settings
-var gap = 85;
+var gap = 100;
 var constant;
 
-var bX = 10;
+var bX =100;
 var bY = 150;
 
 // Adjust gravity and pipe speed
 var gravity = 0.75; // Reduced gravity for slower falling
-var pipeSpeed = 1; // Reduced speed for pipes
+var pipeSpeed = 0.5; // Reduced speed for pipes
 
 var score = 0;
 var isGameOver = false;
