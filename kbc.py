@@ -33,7 +33,7 @@ for i in range(len(question)):
         print(f"Correct answer! You won Rs.{levels[i]}\n\n")
         if money in base_levels:
             last_base_level = money
-            print(f"Congratulations! You have reached a base level of Rs.{money}. You cannot lose this amount.\n")
+            print(f"Congratulations! You have reached a base level of Rs.{money}. You cannot lose this amount.\n\n")
     else:
         print("Wrong answer!\n\n")
         money = last_base_level
